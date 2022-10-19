@@ -21,7 +21,7 @@ const getAll = (req, res) => {
 };
 
 // get message by id
-const getByid = (req, res) => {
+const getById = (req, res) => {
     res.json({
         "status": "success",
         "message": "GETTING message with id: " + req.params.id,
@@ -68,7 +68,7 @@ const getByUsername = (req, res) => {
 
 module.exports.getAll = getAll;
 module.exports.create = create;
-module.exports.getByid = getByid;
+module.exports.getById = getById;
 module.exports.update = update;
 module.exports.remove = remove;
 module.exports.getByUsername = getByUsername;

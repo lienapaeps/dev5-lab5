@@ -12,10 +12,10 @@ router.get('/', messagesController.getAll);
 router.post('/', messagesController.create);
 
 // update message by id
-// router.put('/:id', messagesController.update);
+router.put('/:id', messagesController.update);
 
 // delete message by id
-// router.delete('/:id', messagesController.delete);
+router.delete('/:id', messagesController.remove);
 
 // get message by username
 // router.get('/user/:username', messagesController.getByUsername);

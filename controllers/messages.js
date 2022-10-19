@@ -21,18 +21,18 @@ const getAll = (req, res) => {
 };
 
 // get message by id
-// const getByid = (req, res) => {
-//     res.json({
-//         "status": "success",
-//         "message": "GETTING message with id: " + req.params.id,
-//         "data": {
-//             "message": {
-//                 "user": "John",
-//                 "message": "Hello"
-//             }
-//         }
-//     })
-// };
+const getByid = (req, res) => {
+    res.json({
+        "status": "success",
+        "message": "GETTING message with id: " + req.params.id,
+        "data": {
+            "message": {
+                "user": "John",
+                "message": "Hello"
+            }
+        }
+    })
+};
 
 // create message
 const create = (req, res) => {
@@ -59,10 +59,16 @@ const remove = (req, res) => {
 }
 
 // get message by username
-// getByUsername
+const getByUsername = (req, res) => {
+    res.json({
+        "status": "success",
+        "message": "GETTING message for username: " + req.params.username
+    })
+}
 
 module.exports.getAll = getAll;
 module.exports.create = create;
-// module.exports.getByid = getByid;
+module.exports.getByid = getByid;
 module.exports.update = update;
 module.exports.remove = remove;
+module.exports.getByUsername = getByUsername;

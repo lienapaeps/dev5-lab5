@@ -6,7 +6,7 @@ const messagesController = require('../controllers/messages');
 router.get('/', messagesController.getAll);
 
 // get message by id
-// router.get('/:id', messagesController.getById);
+router.get('/:id', messagesController.getById);
 
 // post/create message
 router.post('/', messagesController.create);
@@ -18,6 +18,6 @@ router.put('/:id', messagesController.update);
 router.delete('/:id', messagesController.remove);
 
 // get message by username
-// router.get('/user/:username', messagesController.getByUsername);
+router.get('/user/:username', messagesController.getByUsername);
 
 module.exports = router;

@@ -17,7 +17,4 @@ router.put('/:id', messagesController.update);
 // delete message by id
 router.delete('/:id', messagesController.remove);
 
-// get message by username
-router.get('/user/:username', messagesController.getByUsername);
-
 module.exports = router;

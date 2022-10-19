@@ -2,22 +2,29 @@ const Message = require('../models/message');
 
 // get all messages
 const getAll = (req, res) => {
-    res.json({
-        "status": "success",
-        "message": "GETTING messages",
-        "data": {
-            "messages": [
-                {
-                    "user": "John",
-                    "message": "Hello"
-                },
-                {
-                    "user": "Jane",
-                    "message": "Hi"
-                }
-            ]
-        }
-    })
+    if (req.query.user){
+        res.json({
+            "status": "success",
+            "message": "GETTING message for username: " + req.query.user,
+        })
+    } else {
+        res.json({
+            "status": "success",
+            "message": "GETTING messages",
+            "data": {
+                "messages": [
+                    {
+                        "user": "John",
+                        "message": "Hello"
+                    },
+                    {
+                        "user": "Jane",
+                        "message": "Hi"
+                    }
+                ]
+            }
+        })
+    }
 };
 
 // get message by id
@@ -58,17 +65,8 @@ const remove = (req, res) => {
     })
 }
 
-// get message by username
-const getByUsername = (req, res) => {
-    res.json({
-        "status": "success",
-        "message": "GETTING message for username: " + req.params.username
-    })
-}
-
 module.exports.getAll = getAll;
 module.exports.create = create;
 module.exports.getById = getById;
 module.exports.update = update;
 module.exports.remove = remove;
-module.exports.getByUsername = getByUsername;
